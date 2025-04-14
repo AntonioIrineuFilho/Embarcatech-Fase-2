@@ -65,6 +65,32 @@
 
 ## Processos de Eletrização
 
+* Os processos de eletrização consistem em métodos de eletrizar objetos, ou seja, remover ou adicionar eletrons.
+  
 ### Eletrização por Atrito
 
+* Consiste em esfregar dois objetos neutros de materiais diferentes, com o intuito de ceder eletrons de um para o outro, deixando ambos eletrizados.
+
+* Exemplo: Passar um pente em um cabelo seco. O cabelo cede eletrons para o pente.
+
+### Eletrização por Contato
+
+* Consiste em tocar um objeto eletrizado em outro neutro, de modo que, se o eletrizado for positivo, ele vai receber eletrons do neutro, e se for negativo, vai dar eletrons para o neutro.
+
+* O intuito é que ambos fiquem eletrizados com o mesmo sinal.
+
+### Eletrização por Indução
+
+* Consiste em um usar um elemento indutor eletrizado para aproximar de um objeto neutro, com o intuio de separar as suas cargas por meio da lei da atração.
+
+* Por exemplo: Se o indutor for negativo, os protons vão ficar na direção do indutor enquanto os eletrons no lado contrário.
+
+* Nisso, é possível conectar o corpo induzido à Terra, se o lado repelido for negativo, os elétrons vão fluir para a Terra, se for positivo, a Terra que cederá eletrons para o induzido.
+
+
+## Aterramento
+
+* **Importante: Por convenção, a Terra possui potencial elétrico de 0V, uma vez que é capaz de ceder ou receber eletrons em qualquer situação, dependendo apenas do outro objeto.**
+
+* **Ou seja, se o outro objeto que se conectar à terra estiver eletrizado negativamente, os eletrons vão fluir para a Terra. Caso esteja eletrizado positivamente, a Terra cederá eletrons para este objeto.**
 
