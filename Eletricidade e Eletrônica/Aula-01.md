@@ -94,3 +94,14 @@
 
 * **Ou seja, se o outro objeto que se conectar à terra estiver eletrizado negativamente, os eletrons vão fluir para a Terra. Caso esteja eletrizado positivamente, a Terra cederá eletrons para este objeto.**
 
+## Eletricidade Estática
+
+* A eletricidade estática ocorre por meio da eletrização por atrito, em que nosso corpo, ao atritar com objetos a nossa volta aculuma eletrons.
+
+* Para descarregar essa eletricidade estática, basta ter contato com algum material metálico que possa conduzir esse excesso de eletrons para o solo.
+
+* Itens como a pulseira antiestática por exemplo, são itens importantes para previnir que a eletricidade estática do nosso corpo danifique componentes eletrônicos no manuseio.
+
+## Blindagem Eletroestática
+
+* A blindagem elotroestática de Faraday, diz que quando há um excesso de eletrons sob um material condutor, os eletrons tendem a se dispersar por toda superfície externa do condutor, em decorrência da lei da atração, pois o excesso de cargas negativas iriam se repelir.
