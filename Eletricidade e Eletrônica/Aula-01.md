@@ -105,3 +105,21 @@
 ## Blindagem Eletroestática
 
 * A blindagem elotroestática de Faraday, diz que quando há um excesso de eletrons sob um material condutor, os eletrons tendem a se dispersar por toda superfície externa do condutor, em decorrência da lei da atração, pois o excesso de cargas negativas iriam se repelir.
+
+* A distribuição das cargas elétricas pelo exterior do condutor torna o campo elétrico na parte interna **nulo** e o potencial elétrico **constante**.
+
+* Mesmo em um condutor oco com um condutor maciço neutro no seu interior, nada vai mudar, não ocorrerá indução uma vez que o campo será nulo e o potencial constante.
+
+* **Um condutor oco protege em seu interior qualquer objeto de qualquer ação externa. Logo, uma estrutura condutora possuirá uma blindagem eletroestática.**
+
+* Essa blindagem é muito utilizada para proteger aparelhos eletrônicos contra interferências eletromagnéticas, criando um insolamento eletromagnético, por exemplo.
+
+## Descargas Atmosféricas
+
+* As descargas atmosféricas ocorrem da seguinte forma:
+
+* As partículas de água e gelo das nuvens ficam eletrizadas por atrito, o que faz uma parte da nuvem ficar mais negativa e a outra mais positiva, a diferença na eletrização faz com que os eletrons sejam atraidos do ponto mais negativo para o mais positivo, gerando um campo elétrico extremamente tenso, uma vez que a resistência do ar tenta impedir o deslocamento dos eletros enquanto a tensão segue aumentando.
+
+* Quando a força dos eletrons quebra a resistência do ar, gera uma descarga chamada de raio.
+
+* A luz gerada é chamada de relãmpago, enquanto o som, de trovão.
