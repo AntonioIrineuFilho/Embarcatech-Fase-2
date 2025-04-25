@@ -28,6 +28,7 @@ void setup() {
     gpio_pull_up(PINO_SDA);
     display.external_vcc=false;
     ssd1306_init(&display, 128, 64, 0x3C, I2C_PORT);
+    ssd1306_clear(&display);
     // LEDs
     gpio_init(LED_G);
     gpio_set_dir(LED_G, GPIO_OUT);
