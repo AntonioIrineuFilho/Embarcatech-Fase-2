@@ -40,8 +40,4 @@
 
 * **Por exemplo: Se eu tiver um resistor com quatro faixas, sendo a de tolerância(extremidade direita) cinza e as de resistência, respectivamente verde, azul e amarelo(começando da extremidade esquerda), qual será o total da resistência?**
 
-* A verde e a azul será concatenada(56) e multiplicada pela ordem de grandeza da amarela(x10 kOHMS), resultando em 560 kOHMS, com 10% de tolerância, ou seja, 554,4-565,6 kOHMS.
-
-* 
-
-* 
+* A verde e a azul será concatenada(56) e multiplicada pela ordem de grandeza da amarela(x10 kOHMS), resultando em 560 kOHMS, com 10% de tolerância, ou seja, 504-616 kOHMS.
