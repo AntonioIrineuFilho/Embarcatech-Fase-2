@@ -95,3 +95,13 @@
 * u -> Constante do material que constitui o núcleo da bobina(permeabilidade magnética)
 
 * I -> Comprimento da bobina
+
+## Geradores Elétricos
+
+* Dispositivos que convertem outros tipos de energia em energia elétrica.
+
+* Ele gera um polo positivo e um polo negativo, o que possibilita uma diferença de potencial entre os terminais.
+
+* Em um gerador real existem perdas, uma vez que parte da energia é dissipada em forma de calor em função da sua resistência interna.
+
+* A eficiência/rendimento de um gerador é determinado pela razão da potência que entra pela potência que sai do gerador.
