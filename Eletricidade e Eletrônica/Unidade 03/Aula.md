@@ -41,3 +41,57 @@
 * **Por exemplo: Se eu tiver um resistor com quatro faixas, sendo a de tolerância(extremidade direita) cinza e as de resistência, respectivamente verde, azul e amarelo(começando da extremidade esquerda), qual será o total da resistência?**
 
 * A verde e a azul será concatenada(56) e multiplicada pela ordem de grandeza da amarela(x10 kOHMS), resultando em 560 kOHMS, com 10% de tolerância, ou seja, 504-616 kOHMS.
+
+## Capacitores
+
+* O capacitor é um componente cuja finalidade é armazenar energia elétrica em um campo elétrico.
+
+* Ele é composto por duas placas condutoras que ficam nas extreminadades, chamadas de **armaduras** e por um isolante chamada dielétrico, que fica entre os condutores.
+
+### Capacitância
+
+* É deonimanda **capacitância** a capacidade de armazenamento de cargas elétricas de um capacitor nas suas armaduras, dependendo de fatores como a área da armadura. a distância entre as armaduras e tipo de isolante que as separa.
+
+* Os capacitores normalmente não possuem polaridade, mas os eletroliticos possuem, logo é importante não inverter a polaridade.
+
+* C = p * A / d
+
+* C -> Capacitância
+
+* p -> Permissividade elétrica do dielétrico
+
+* A -> Área das armaduras(diretamente proporcional à capacitância)
+
+* d -> Distância entre as armaduras(inversamente proporcional à capacitância)
+
+## Indutores
+
+* Diferente dos capacitores, tem a finalidade de armanezar energia em **campos magnéticos**.
+
+* São feitos de fios condutores enrolados em espiras, formando uma bobina. Esses fios são esmaltados, ou seja, isolados uns dos outros para evitar curto quando entram em contato.
+
+* O núcleo da bobina pode ser feito de ar, ferro ou ferrite.
+
+* O objetivo é gerar um campo magnético.
+
+* Possuem alta impedância/resistência em corrente alternada e baixa impedância/resistência em corrente contínua.
+
+* O campo magnético é gerado em sentido oposto à variação da corrente.
+
+### Indutância
+
+* A indutância é a capacidade de armazenar uma maior ou menor quantidade de cargas elétricas no campo magnético do indutor.
+
+* A indutância depende da área das espiras, do número de espiras da bobina, do comprimento da bobina e do material que constitui o núcleo da bobina.
+
+* L = u * N² * A / I
+
+* L -> Indutância
+
+* N -> Número de espiras
+
+* A -> Área das espiras
+
+* u -> Constante do material que constitui o núcleo da bobina(permeabilidade magnética)
+
+* I -> Comprimento da bobina
