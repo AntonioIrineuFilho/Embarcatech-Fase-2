@@ -1,6 +1,6 @@
 # Insights
 
-## Associativa x Comutativa
+## Associativa x Distributiva
 
 * Se todas as variáveis tiverem o mesmo símbolo(+ ou .), pode-se remover os parênteses:
 
@@ -10,7 +10,7 @@
 
   * Ex: A . (B + C) = A . B + A . C
 
-* **NÃO CONFUNDIR COM ABSORÇÃO, A COMUTATIVA É FEITA COM MAIS DE DUAS VARIÁVEIS, QUANDO HÁ APENAS DUAS É ABSORÇÃO**
+* **NÃO CONFUNDIR COM ABSORÇÃO, A DISTRIBUTIVA É FEITA COM MAIS DE DUAS VARIÁVEIS, QUANDO HÁ APENAS DUAS É ABSORÇÃO**
 
 ## Absorção
 
