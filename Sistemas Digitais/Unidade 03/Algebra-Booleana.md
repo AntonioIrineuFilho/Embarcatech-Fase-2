@@ -23,4 +23,8 @@
  * De Morgan vale para os dois tipos, tanto (A + B)' quanto (A . B)':
 
    * (A + B)' = A' . B' | (A . B)' = A' + B'
+
+## XOR
+
+* A XOR B = A . B' + A' . B
    
