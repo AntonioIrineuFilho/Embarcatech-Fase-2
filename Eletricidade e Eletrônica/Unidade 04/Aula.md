@@ -48,3 +48,13 @@
 
 *  Para fins de cálculo, é necessário definir um sentido para a corrente, sentido que pode estar correto ou não.
 
+### Leis dos nós
+
+* A soma das correntes em um nó é nula, ou seja, a soma das correntes que entram é igual à corrente que sai.
+
+### Lei das malhas
+
+* A soma das tensões de uma malha é nula, ou seja, se eu tiver mais de uma fonte de tensão em uma malha a soma será nula.
+
+   * Ex: Se numa malha eu tiver resistores, haverá queda de tensão ou seja, eu terei novos valores de tensão nessa malha, a soma de todas as tensões dela será nula. 
+
