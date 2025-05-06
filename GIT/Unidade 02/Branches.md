@@ -38,7 +38,6 @@ conteúdo da branch atual
 conteúdo da outra branch
 
 >>>>>>> nome-da-branch
-
 ````
 
 * O desenvolvedor deve então abrir o(s) arquivo(s), analisar as diferenças, remover as marcações e editar o conteúdo de forma coerente. Após isso, o arquivo deve ser adicionado novamente à área de staging e o commit de merge pode ser finalizado.
@@ -56,3 +55,15 @@ conteúdo da outra branch
 * **Pull Requests ou Merge Requests**: são fundamentais para garantir revisão e validação do código antes da integração.
 
 * ``git pull origin mainn`` para atualizar sua branch com as últimas mudanças da principal antes de fazer o merge.
+
+## Gitflow
+
+* **main**: contém o código de produção.
+
+* **develop**: linha de desenvolvimento contínuo.
+
+* **feature/***: criadas a partir de develop para o desenvolvimento de novas funcionalidades.
+
+* **release/***: criadas para preparar uma nova versão a partir de develop, com ajustes finais antes de ir para main.
+
+* **hotfix/***: criadas a partir de main para corrigir problemas críticos em produção.
