@@ -2,19 +2,19 @@
 
 ## Comandos
 
-``git branch`` lista as branches existentes.
+* ``git branch`` lista as branches existentes.
 
-``git branch nome-da-branch`` cria uma nova branch.
+* ``git branch nome-da-branch`` cria uma nova branch.
 
-``git switch nome-da-branch ou git checkout nome-da-branch`` alterna entre branches.
+* ``git switch nome-da-branch ou git checkout nome-da-branch`` alterna entre branches.
 
-``git switch -c nome-da-branch ou git checkout -b nome-da-branch`` cria e muda para a nova branch.
+* ``git switch -c nome-da-branch ou git checkout -b nome-da-branch`` cria e muda para a nova branch.
 
-``git branch -d nome-da-branch`` exclui uma branch já mesclada.
+* ``git branch -d nome-da-branch`` exclui uma branch já mesclada.
 
-``git branch -D nome-da-branch`` força a exclusão da branch, mesmo sem merge.
+* ``git branch -D nome-da-branch`` força a exclusão da branch, mesmo sem merge.
 
-``git merge nome-da-branch`` realiza o merge da branch especificada na branch atual.
+* ``git merge nome-da-branch`` realiza o merge da branch especificada na branch atual.
 
 ## Exemplos Sintaxe de Branches
 
@@ -42,3 +42,17 @@ conteúdo da outra branch
 ````
 
 * O desenvolvedor deve então abrir o(s) arquivo(s), analisar as diferenças, remover as marcações e editar o conteúdo de forma coerente. Após isso, o arquivo deve ser adicionado novamente à área de staging e o commit de merge pode ser finalizado.
+
+## Boas Práticas
+
+* **Branches pequenas e objetivas**: tornam o código mais fácil de revisar e integram-se com menos atritos.
+
+* **Nomenclatura padronizada**: ajuda na organização e localização das tarefas. Pode incluir prefixos como feature/, fix/, hotfix/, release/.
+
+* **Integração contínua**: realizar merges frequentes evita divergências excessivas e facilita a resolução de conflitos.
+
+* **Atualização da branch principal**: manter sua branch alinhada com main reduz riscos na hora de fazer merge.
+
+* **Pull Requests ou Merge Requests**: são fundamentais para garantir revisão e validação do código antes da integração.
+
+* ``git pull origin mainn`` para atualizar sua branch com as últimas mudanças da principal antes de fazer o merge.
