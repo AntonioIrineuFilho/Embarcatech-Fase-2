@@ -1,4 +1,4 @@
-# Rseumo Branches
+# Resumo Branches
 
 ## Comandos
 
