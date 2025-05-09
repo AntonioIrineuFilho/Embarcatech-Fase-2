@@ -94,7 +94,7 @@ void initPio() {
     ws2818b_program_init(np_pio, sm, offset, LED_PIN, 800000.f);
 
     // Limpa buffer de pixels.
-    for (uint i = 0; i < LED_COUNT; ++i) { // POSSIVELMENTE TEM QUE TROCAR O LED_COUNT PRA 4 PRA PEGAR COR SO PARA OS 4 PRIMEIROS DA MATRIZ
+    for (uint i = 0; i < LED_COUNT; ++i) {
     leds[i].R = 0;
     leds[i].G = 0;
     leds[i].B = 0;
