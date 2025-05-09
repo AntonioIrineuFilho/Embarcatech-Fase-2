@@ -23,13 +23,15 @@
 #define PINO_SDA 15
 
 ssd1306_t display;
+// VARIÁVEIS DE ESTADO DOS LEDS DA MATRIZ
+int GR, HO, DI, PT = 0;
 
 void setup() {
     stdio_init_all();
     // RGB
     gpio_init(LED_G);
     gpio_set_dir(LED_G, GPIO_OUT);
-    gpio_put(LED_G, 0);
+    gpio_put(LED_G, 1);
     gpio_init(LED_R);
     gpio_set_dir(LED_R, GPIO_OUT);
     gpio_put(LED_R, 0);
@@ -38,7 +40,7 @@ void setup() {
     adc_gpio_init(VRY);
     adc_select_input(ADC_CHANNEL_Y);
     gpio_init(JOYSTICK_BTN);
-    gpio_set_dir(JOYSTICK_BTN, GPIO_OUT);
+    gpio_set_dir(JOYSTICK_BTN, GPIO_IN);
     gpio_pull_up(JOYSTICK_BTN);
     // OLED
     i2c_init(I2C_PORT, 400*1000);// I2C Inicialização. Usando 400Khz.
@@ -64,13 +66,14 @@ npLED_t leds[LED_COUNT];
 // Variáveis para uso da máquina PIO.
 PIO np_pio;
 uint sm;
-  
+
+// OS LEDS ESTÃO NA LINHA 4 COLUNA DE 0 A 3
 int matriz[5][5][3] = {
-    {{255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {0, 0, 0}},
     {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
     {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
     {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
-    {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}}
+    {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
+    {{255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {0, 0, 0}}
 };
 
 // Inicializa a máquina PIO para controle da matriz de LEDs.
@@ -111,17 +114,17 @@ void setLEDPio(const uint index, const uint8_t r, const uint8_t g, const uint8_t
 // Limpa o buffer de pixels.
 void clearPio() {
     for (uint i = 0; i < LED_COUNT; ++i)
-      npSetLED(i, 0, 0, 0);
+      setLEDPio(i, 0, 0, 0);
   }
  
 // PASSAR A LINHA E A COLUNA COMO PARÂMETROS PARA CALCULAR ENDEREÇO
 int getIndex(int x, int y) {
     // Se a linha for par (0, 2, 4), percorremos da esquerda para a direita.
     // Se a linha for ímpar (1, 3), percorremos da direita para a esquerda.
-    if (y % 2 == 0) {
-        return 24-(y * 5 + x); // Linha par (esquerda para direita).
+    if (x % 2 == 0) {
+        return 24-(x * 5 + y); // Linha par (esquerda para direita).
     } else {
-        return 24-(y * 5 + (4 - x)); // Linha ímpar (direita para esquerda).
+        return 24-(x * 5 + (4 - y)); // Linha ímpar (direita para esquerda).
     }
 }
 
@@ -138,18 +141,122 @@ void writePio() {
 
 // ITERA POR TODA A MATRIZ E ADICIONA OS VALORES PARA TODOS OS LEDS CONFORME OS VALORES DA MATRIZ MATRIZ
 void render() {
+    clearPio();
     for(int i = 0; i < 5; i++){
         for(int j = 0; j < 5; j++) {
             int index = getIndex(i, j);
             setLEDPio(index, matriz[i][j][0], matriz[i][j][1], matriz[i][j][2]);
         }
     }
+    writePio();
+}
+
+void draw(char *text) {
+    ssd1306_clear(&display);
+    ssd1306_draw_string(&display, 23, 30, 2, text);
+    ssd1306_show(&display);
+}
+
+void routine(int selected) {
+    switch (selected) {
+        case 0:
+            if (GR == 0) { 
+                GR = 1; 
+                matriz[4][0][0] = 0;
+                matriz[4][0][1] = 255; // VERDE
+            }
+            else { 
+                GR = 0; 
+                matriz[4][0][0] = 255; // VERMELHO
+                matriz[4][0][1] = 0;
+            }
+            render();
+            break;
+        case 1:
+            if (HO == 0) { 
+                HO = 1; 
+                matriz[4][1][0] = 0;
+                matriz[4][1][1] = 255;
+            }
+            else { 
+                HO = 0; 
+                matriz[4][1][0] = 255;
+                matriz[4][1][1] = 0;
+            }
+            render();
+            break;
+        case 2:
+            if (DI == 0) { 
+                DI = 1; 
+                matriz[4][2][0] = 255;
+                matriz[4][2][1] = 0;
+            }
+            else { 
+                DI = 0; 
+                matriz[4][2][0] = 0;
+                matriz[4][2][1] = 255;
+            }
+            render();
+            break;
+        case 3:
+            if (PT == 0) { 
+                PT = 1; 
+                matriz[4][3][0] = 255;
+                matriz[4][3][1] = 0;
+            }
+            else { 
+                PT = 0;
+                matriz[4][3][0] = 0;
+                matriz[4][3][1] = 255; 
+            }
+            render();
+            break;
+    }
+    if ((matriz[4][0][1] == 255 && matriz[4][1][1] == 255 && matriz[4][2][1] == 255) || matriz[4][3][0] == 255) { 
+        gpio_put(LED_R, 0); 
+        gpio_put(LED_G, 1); 
+    }
+    else { 
+        gpio_put(LED_R, 1); 
+        gpio_put(LED_G, 0); 
+    }
 }
 
 
+void menu(int selected) {
+    switch(selected) {
+        case 0:
+            draw("0 - GR");
+            break;
+        case 1:
+            draw("1 - HO");
+            break;
+        case 2:
+            draw("2 - DI");
+            break;
+        case 3:
+            draw("3 - PT");
+            break;
+    }
+    if (gpio_get(JOYSTICK_BTN) == 0) { 
+        sleep_ms(200);
+        routine(selected); 
+    }
+}
 
 int main() {
     setup();
     initPio();
-
-  }
+    render();
+    int selected = 0;
+    menu(selected);
+    while(true) {
+        int adc_raw_y = adc_read();
+        if (adc_raw_y < 500) {
+            sleep_ms(200);
+            if (selected == 3) { selected = 0; } 
+            else { selected++; }
+        }
+        menu(selected);
+    }
+}
