@@ -73,3 +73,37 @@
 * Cada fio vai conduzir a corrente por diodos diretamente polarizados e ambas correntes vão se encontrar no resistor de saída.
 
 * Com isso, a corrente volta para o o fio central que vai funcionar como terminal hibrido para as duas polaridades(uma vez que vai ter cargas positivas e negativas).
+
+## Fontes Lineares
+
+* Apenas um circuito retificador não é o suficiente para entregar a energia eletrica, uma vez que essa estratégia converte os senoides em pulsos, ou seja, a energia seria entregue de forma extremamente intensa oscilando de 0 ao pico, o que danificaria os equipamentos.
+
+* Primeiro, uma transformador é passado na tensão alternada para diminuir a amplitude dos senoides(e consequentemente a tensão), depois a tensão é passada no retificador para ser convertida em tensão contínua.
+
+* Após isso, essa tensão contínua é passada em uma fonte capacitiva, em que capacitores aramzenam a energia dos picos e distribuem suavemente durante o intervalo dos picos, evitando oscilações bruscas.
+
+* Por fim, é utilizado um regulador de tensão, que corta o ripple(pequenas oscilações que sobram do capacitor) e deixa a tensão constante.
+
+* O regulador de tensão sempre vai diminuir a tensão.
+
+## Regulador Zener
+
+* Um circuito regulador que utilizao o diodo zener.
+
+* Nesse circuito, o diodo fica em paralelo com o circuito protegido e só deixa passar a tensão configurada.
+
+* Como a associação é em paralelo, a tensão regulada no diodo é a mesma para o circuito protegido.
+
+* O diodo zener também protege o circuito ficando ativo ou inativo conforme necessário.
+
+### Calcular Atividade Zener
+
+* Para saber se o diodo ficará inativo ou ativo, basta calcular a tensão do circuito utilizando a fórmula do regulador de tensão, desocnsiderando a tensão de corte do próprio diodo.
+
+* Se a tensão regulada for menor que a de corte do diodo, o diodo fica inativo, ou seja, não influencia o circuito.
+
+* Vout = Vin * R1 / R1 + R2
+
+* Se a tensão regulada for maior que o ponto de corte, então o diodo vai estar ativo, funcionando como uma fonte de tensão com seu valor de corte sendo o valor de alimentação.
+
+* Considerando o **diodo ativo** a corrente no diodo vai ser a diferença entre a corrente de entrada e a corrente da carga(RL).
