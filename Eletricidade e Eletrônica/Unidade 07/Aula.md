@@ -57,3 +57,45 @@
 * Para valores de Vce maiores que 0,7 volts, o transistor já está em modo ativo.
 
 * Mas, na prática, a região próxima a 0,7 volts é muito instável. Por isso, nas aplicações reais é comum encontrar valores de Vce próximos a zero volts, quando o transistor está em modo de saturação e bem superiores a 0,7 volts quando o transistor está em modo ativo.
+
+## Aplicações
+
+* Amplificação de sinais e chaveamento.
+
+* Amplificação é feita no modo de operação ativo.
+
+* Chaveamento é feito alternando entre saturação e corte.
+
+### Chaveamento
+
+* O controle da base pode ser feito por PWN, um controlador que passa uma pequena corrente na base quando o nível lógico está alto.
+
+### Amplificação
+
+* Na amplificação, é recebido um sinal de entrada AC geralmente, esse sinal deve passar por um capacitor que acopla a parte AC do sinal, bloqueando a parte DC da entrada. Esse AC se soma ao DC da fonte de alimentação(que pode ser uma bateria, pilha, etc) para que base do capacitor(que só trabalha com tensão DC) deixe passar.
+
+## Transistores e portas lógicas
+
+* Internamente, as próprias portas lógicas são arranjos de transistores trabalhando em modo chaveamento.
+
+* Para a chave entrar em estado de saturação(ligar) a queda de tensão Vbe deve ser próxima a 0,7V e a queda de tensão Vce deve ser próxima a 0V.
+
+* As entradas da porta lógica é a corrente de passagem do nível lógico para a base enquanto a saída 0 pode ser o aterramento.
+
+## Transistores de efeito de campo(FETs)
+
+* Possuem a mesma função que um TBJ, no entanto, não são controlados por corrente, mas sim por tensão.
+
+* Basicamente o pino de controle não passa corrente, mas sim é aplicado ums tensão que gera um campo elétrico que permite a passagem de corrente entre os outros dois terminais.
+
+* O principal tipo de FET é o **MOSFET**.
+
+### MOSFET
+
+* Os MOSFETs podem ser NPN ou PNP, conduzindo corrente em apenas um sentido tal qual os TBJ.
+
+* **Gate** -> O terminal de controle, onde não passa corrente.
+
+* **Fonte(Source)** e **Drain(Dreno)** -> Outros terminais por onde a corrente passa, semelhante ao emissor e coletor.
+
+* No MOSFET do tipo n(NPN), a seta aponta para o gate , enquanto no MOSFET do tipo p(PNP) aponta para fora do gate.
