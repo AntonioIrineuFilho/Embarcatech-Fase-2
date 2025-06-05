@@ -4,15 +4,14 @@
 #include "hardware/pwm.h"
 
 
-#define BTN_B 6
+#define GP8 8
 #define LED_R 13
 #define BUZZER_PIN 21
 
 void setup() {
     stdio_init_all();
-    gpio_init(BTN_B);
-    gpio_set_dir(BTN_B, GPIO_IN);
-    gpio_pull_up(BTN_B);
+    gpio_init(GP8);
+    gpio_set_dir(GP8, GPIO_IN);
     gpio_init(LED_R);
     gpio_set_dir(LED_R, GPIO_OUT);
     gpio_put(LED_R, 0);
@@ -55,7 +54,7 @@ void play_tone(uint frequency, uint duration_ms) {
 void alert_sound() {
     for (int i = 0; i < sizeof(alert_notes) / sizeof(alert_notes[0]); i++) {
         play_tone(alert_notes[i], note_duration[i]);
-        if (gpio_get(BTN_B) == 1) {
+        if (gpio_get(GP8) == 0) {
             return;
         }
     }
@@ -71,8 +70,8 @@ int main() {
     setup_buzzer();
 
     while(true) {
-        if (gpio_get(BTN_B) == 0) {
-            while (gpio_get(BTN_B) == 0) {
+        if (gpio_get(GP8) == 1) {
+            while (gpio_get(GP8) == 1) {
                 alert();
             }
             gpio_put(LED_R, 0);
