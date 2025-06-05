@@ -55,6 +55,9 @@ void play_tone(uint frequency, uint duration_ms) {
 void alert_sound() {
     for (int i = 0; i < sizeof(alert_notes) / sizeof(alert_notes[0]); i++) {
         play_tone(alert_notes[i], note_duration[i]);
+        if (gpio_get(BTN_B) == 1) {
+            return;
+        }
     }
 }
 
@@ -70,7 +73,6 @@ int main() {
     while(true) {
         if (gpio_get(BTN_B) == 0) {
             while (gpio_get(BTN_B) == 0) {
-                sleep_ms(200);
                 alert();
             }
             gpio_put(LED_R, 0);
